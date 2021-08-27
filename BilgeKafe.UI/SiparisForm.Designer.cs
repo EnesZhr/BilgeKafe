@@ -30,22 +30,22 @@ namespace BilgeKafe.UI
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.dgvSiparişDetaylari = new System.Windows.Forms.DataGridView();
+            this.cboUrun = new System.Windows.Forms.ComboBox();
+            this.nudAdet = new System.Windows.Forms.NumericUpDown();
+            this.btnDetayEkle = new System.Windows.Forms.Button();
+            this.btnSiparisIptal = new System.Windows.Forms.Button();
+            this.btnAnasayfa = new System.Windows.Forms.Button();
+            this.btnOdemeAl = new System.Windows.Forms.Button();
+            this.btnMasaTasi = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblMasaNo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.lblOdemeTutari = new System.Windows.Forms.Label();
+            this.cboMasaNo = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSiparişDetaylari)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,89 +58,96 @@ namespace BilgeKafe.UI
             this.label1.TabIndex = 0;
             this.label1.Text = "Ürün";
             // 
-            // dataGridView1
+            // dgvSiparişDetaylari
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 82);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(558, 525);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvSiparişDetaylari.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSiparişDetaylari.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSiparişDetaylari.Location = new System.Drawing.Point(13, 82);
+            this.dgvSiparişDetaylari.Name = "dgvSiparişDetaylari";
+            this.dgvSiparişDetaylari.RowHeadersWidth = 51;
+            this.dgvSiparişDetaylari.RowTemplate.Height = 24;
+            this.dgvSiparişDetaylari.Size = new System.Drawing.Size(561, 517);
+            this.dgvSiparişDetaylari.TabIndex = 1;
             // 
-            // comboBox1
+            // cboUrun
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(217, 35);
-            this.comboBox1.TabIndex = 2;
+            this.cboUrun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUrun.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboUrun.FormattingEnabled = true;
+            this.cboUrun.Location = new System.Drawing.Point(16, 40);
+            this.cboUrun.Name = "cboUrun";
+            this.cboUrun.Size = new System.Drawing.Size(217, 35);
+            this.cboUrun.TabIndex = 2;
             // 
-            // numericUpDown1
+            // nudAdet
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(239, 40);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(150, 34);
-            this.numericUpDown1.TabIndex = 3;
+            this.nudAdet.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudAdet.Location = new System.Drawing.Point(239, 40);
+            this.nudAdet.Name = "nudAdet";
+            this.nudAdet.Size = new System.Drawing.Size(150, 34);
+            this.nudAdet.TabIndex = 3;
             // 
-            // button1
+            // btnDetayEkle
             // 
-            this.button1.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(395, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 36);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "EKLE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDetayEkle.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetayEkle.Location = new System.Drawing.Point(395, 39);
+            this.btnDetayEkle.Name = "btnDetayEkle";
+            this.btnDetayEkle.Size = new System.Drawing.Size(144, 36);
+            this.btnDetayEkle.TabIndex = 4;
+            this.btnDetayEkle.Text = "EKLE";
+            this.btnDetayEkle.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnSiparisIptal
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkRed;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(604, 437);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(215, 78);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "SİPARİŞ İPTAL";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSiparisIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSiparisIptal.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSiparisIptal.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSiparisIptal.ForeColor = System.Drawing.Color.White;
+            this.btnSiparisIptal.Location = new System.Drawing.Point(607, 429);
+            this.btnSiparisIptal.Name = "btnSiparisIptal";
+            this.btnSiparisIptal.Size = new System.Drawing.Size(215, 78);
+            this.btnSiparisIptal.TabIndex = 5;
+            this.btnSiparisIptal.Text = "SİPARİŞ İPTAL";
+            this.btnSiparisIptal.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnAnasayfa
             // 
-            this.button3.BackColor = System.Drawing.Color.Gold;
-            this.button3.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.ForeColor = System.Drawing.Color.OrangeRed;
-            this.button3.Location = new System.Drawing.Point(604, 521);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(447, 56);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "ANASAYFAYA DÖN";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAnasayfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnasayfa.BackColor = System.Drawing.Color.Gold;
+            this.btnAnasayfa.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAnasayfa.ForeColor = System.Drawing.Color.OrangeRed;
+            this.btnAnasayfa.Location = new System.Drawing.Point(607, 513);
+            this.btnAnasayfa.Name = "btnAnasayfa";
+            this.btnAnasayfa.Size = new System.Drawing.Size(447, 56);
+            this.btnAnasayfa.TabIndex = 6;
+            this.btnAnasayfa.Text = "ANASAYFAYA DÖN";
+            this.btnAnasayfa.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnOdemeAl
             // 
-            this.button4.BackColor = System.Drawing.Color.ForestGreen;
-            this.button4.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(836, 437);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(215, 78);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "ÖDEME AL";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnOdemeAl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOdemeAl.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnOdemeAl.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOdemeAl.ForeColor = System.Drawing.Color.White;
+            this.btnOdemeAl.Location = new System.Drawing.Point(839, 429);
+            this.btnOdemeAl.Name = "btnOdemeAl";
+            this.btnOdemeAl.Size = new System.Drawing.Size(215, 78);
+            this.btnOdemeAl.TabIndex = 7;
+            this.btnOdemeAl.Text = "ÖDEME AL";
+            this.btnOdemeAl.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnMasaTasi
             // 
-            this.button5.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(929, 38);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(122, 37);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "TAŞI";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnMasaTasi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMasaTasi.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMasaTasi.Location = new System.Drawing.Point(932, 38);
+            this.btnMasaTasi.Name = "btnMasaTasi";
+            this.btnMasaTasi.Size = new System.Drawing.Size(122, 37);
+            this.btnMasaTasi.TabIndex = 8;
+            this.btnMasaTasi.Text = "TAŞI";
+            this.btnMasaTasi.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -162,75 +169,79 @@ namespace BilgeKafe.UI
             this.label3.TabIndex = 10;
             this.label3.Text = "Masa No:";
             // 
-            // label4
+            // lblMasaNo
             // 
-            this.label4.BackColor = System.Drawing.Color.Tomato;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("OCR A Extended", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(604, 78);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(447, 205);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "03";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMasaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMasaNo.BackColor = System.Drawing.Color.Tomato;
+            this.lblMasaNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMasaNo.Font = new System.Drawing.Font("OCR A Extended", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMasaNo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblMasaNo.Location = new System.Drawing.Point(607, 78);
+            this.lblMasaNo.Name = "lblMasaNo";
+            this.lblMasaNo.Size = new System.Drawing.Size(447, 205);
+            this.lblMasaNo.TabIndex = 11;
+            this.lblMasaNo.Text = "03";
+            this.lblMasaNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(698, 342);
+            this.label5.Location = new System.Drawing.Point(701, 334);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(178, 28);
             this.label5.TabIndex = 12;
             this.label5.Text = "Ödeme Tutarı:";
             // 
-            // label6
+            // lblOdemeTutari
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(919, 342);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 28);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "TL";
+            this.lblOdemeTutari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblOdemeTutari.AutoSize = true;
+            this.lblOdemeTutari.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOdemeTutari.Location = new System.Drawing.Point(902, 334);
+            this.lblOdemeTutari.Name = "lblOdemeTutari";
+            this.lblOdemeTutari.Size = new System.Drawing.Size(108, 28);
+            this.lblOdemeTutari.TabIndex = 13;
+            this.lblOdemeTutari.Text = "199,99 ₺";
             // 
-            // comboBox2
+            // cboMasaNo
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(794, 41);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(129, 35);
-            this.comboBox2.TabIndex = 15;
+            this.cboMasaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboMasaNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMasaNo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMasaNo.FormattingEnabled = true;
+            this.cboMasaNo.Location = new System.Drawing.Point(797, 41);
+            this.cboMasaNo.Name = "cboMasaNo";
+            this.cboMasaNo.Size = new System.Drawing.Size(129, 35);
+            this.cboMasaNo.TabIndex = 15;
             // 
             // SiparisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 619);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(1103, 611);
+            this.Controls.Add(this.cboMasaNo);
+            this.Controls.Add(this.lblOdemeTutari);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblMasaNo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnMasaTasi);
+            this.Controls.Add(this.btnOdemeAl);
+            this.Controls.Add(this.btnAnasayfa);
+            this.Controls.Add(this.btnSiparisIptal);
+            this.Controls.Add(this.btnDetayEkle);
+            this.Controls.Add(this.nudAdet);
+            this.Controls.Add(this.cboUrun);
+            this.Controls.Add(this.dgvSiparişDetaylari);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SiparisForm";
-            this.Text = "SiparisForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Text = "Masa 3";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSiparişDetaylari)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,19 +250,19 @@ namespace BilgeKafe.UI
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridView dgvSiparişDetaylari;
+        private System.Windows.Forms.ComboBox cboUrun;
+        private System.Windows.Forms.NumericUpDown nudAdet;
+        private System.Windows.Forms.Button btnDetayEkle;
+        private System.Windows.Forms.Button btnSiparisIptal;
+        private System.Windows.Forms.Button btnAnasayfa;
+        private System.Windows.Forms.Button btnOdemeAl;
+        private System.Windows.Forms.Button btnMasaTasi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblMasaNo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label lblOdemeTutari;
+        private System.Windows.Forms.ComboBox cboMasaNo;
     }
 }
