@@ -1,4 +1,5 @@
-﻿Solution içerisine AnkaKafe.Data adında Class Library türünde bir proje oluşturun ve içerisine aşağıdaki bilgileri kullanarak 4 adet class ve 1 adet enum oluşturun.
+﻿Solution içerisine AnkaKafe.Data adında Class Library türünde bir 
+proje oluşturun ve içerisine aşağıdaki bilgileri kullanarak 4 adet class ve 1 adet enum oluşturun.
 
 Urun
 * UrunAd: string
