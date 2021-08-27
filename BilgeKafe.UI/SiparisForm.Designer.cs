@@ -65,7 +65,7 @@ namespace BilgeKafe.UI
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(526, 525);
+            this.dataGridView1.Size = new System.Drawing.Size(558, 525);
             this.dataGridView1.TabIndex = 1;
             // 
             // comboBox1
