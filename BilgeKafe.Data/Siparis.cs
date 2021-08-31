@@ -9,22 +9,31 @@ namespace BilgeKafe.Data
     public class Siparis
     {
         public int MasaNo { get; set; }
-        public int SiparisDurum { get; set; }
-        public decimal OdenecekTutar { get; set; }
-        public DateTime? AcilisZamani { get; set; } = DateTime.Now;
-        public DateTime? KapanisZamani { get; set; }
-        public List<SiparisDetay> SiparisDetaylar { get; set; }
-        public string ToplamTutarTL { get; }
 
-        public decimal ToplamTutar()
-        {
-            decimal toplam = 0;
-            foreach (SiparisDetay detay in SiparisDetaylar)
-            {
-                toplam += detay.Tutar();
-            }
-            return toplam;
-        }
+        public SiparisDurum SiparisDurum { get; set; } = SiparisDurum.Aktif;
+
+        public decimal OdenenTutar { get; set; }
+
+        public DateTime? AcilisZamani { get; set; } = DateTime.Now;
+
+        public DateTime? KapanisZamani { get; set; }
+
+        public List<SiparisDetay> SiparisDetaylar { get; set; } = new List<SiparisDetay>();
+
+        public string ToplamTutarTL => $"{ToplamTutar():n2}₺";
+
+
+        public decimal ToplamTutar() => SiparisDetaylar.Sum(sd => sd.Tutar());
+
+        //public decimal ToplamTutar()
+        //{
+        //    decimal toplam = 0;
+        //    foreach (SiparisDetay detay in SiparisDetaylar)
+        //    {
+        //        toplam += detay.Tutar();
+        //    }
+        //    return toplam;
+        //}
 
 
 
