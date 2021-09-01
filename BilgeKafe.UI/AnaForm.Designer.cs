@@ -44,7 +44,7 @@ namespace BilgeKafe.UI
             this.tsmiGecmisSiparisler});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(833, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(833, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,6 +59,7 @@ namespace BilgeKafe.UI
             this.tsmiGecmisSiparisler.Name = "tsmiGecmisSiparisler";
             this.tsmiGecmisSiparisler.Size = new System.Drawing.Size(136, 24);
             this.tsmiGecmisSiparisler.Text = "Geçmiş Siparişler";
+            this.tsmiGecmisSiparisler.Click += new System.EventHandler(this.tsmiGecmisSiparisler_Click_1);
             // 
             // lvwMasalar
             // 

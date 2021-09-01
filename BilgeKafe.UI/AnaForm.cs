@@ -15,6 +15,7 @@ namespace BilgeKafe.UI
     public partial class AnaForm : Form
     {
         KafeVeri db = new KafeVeri();
+        private readonly BindingList<GecmisSiparislerForm> gecmisSiparislerForm;
         public AnaForm()
         {
             OrnekUrunleriOlustur();
@@ -67,7 +68,17 @@ namespace BilgeKafe.UI
             SiparisForm frmSiparis = new SiparisForm(db, siparis);
             frmSiparis.ShowDialog();
 
+            if (siparis.SiparisDurum != SiparisDurum.Aktif)
+            {
+                lvi.ImageKey = "bos";
+            }
 
+
+        }
+
+        private void tsmiGecmisSiparisler_Click_1(object sender, EventArgs e)
+        {
+            new GecmisSiparislerForm(db).ShowDialog();
         }
     }
 }

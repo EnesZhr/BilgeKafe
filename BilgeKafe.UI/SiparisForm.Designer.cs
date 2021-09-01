@@ -29,6 +29,7 @@ namespace BilgeKafe.UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSiparişDetaylari = new System.Windows.Forms.DataGridView();
             this.cboUrun = new System.Windows.Forms.ComboBox();
@@ -44,6 +45,10 @@ namespace BilgeKafe.UI
             this.label5 = new System.Windows.Forms.Label();
             this.lblOdemeTutari = new System.Windows.Forms.Label();
             this.cboMasaNo = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiparişDetaylari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).BeginInit();
             this.SuspendLayout();
@@ -61,19 +66,26 @@ namespace BilgeKafe.UI
             // dgvSiparişDetaylari
             // 
             this.dgvSiparişDetaylari.AllowUserToAddRows = false;
-            this.dgvSiparişDetaylari.AllowUserToDeleteRows = false;
             this.dgvSiparişDetaylari.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSiparişDetaylari.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSiparişDetaylari.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSiparişDetaylari.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSiparişDetaylari.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.dgvSiparişDetaylari.Location = new System.Drawing.Point(13, 82);
+            this.dgvSiparişDetaylari.MultiSelect = false;
             this.dgvSiparişDetaylari.Name = "dgvSiparişDetaylari";
             this.dgvSiparişDetaylari.ReadOnly = true;
+            this.dgvSiparişDetaylari.RowHeadersVisible = false;
             this.dgvSiparişDetaylari.RowHeadersWidth = 51;
             this.dgvSiparişDetaylari.RowTemplate.Height = 24;
-            this.dgvSiparişDetaylari.Size = new System.Drawing.Size(561, 517);
+            this.dgvSiparişDetaylari.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSiparişDetaylari.Size = new System.Drawing.Size(580, 517);
             this.dgvSiparişDetaylari.TabIndex = 1;
             // 
             // cboUrun
@@ -127,6 +139,7 @@ namespace BilgeKafe.UI
             this.btnSiparisIptal.TabIndex = 5;
             this.btnSiparisIptal.Text = "SİPARİŞ İPTAL";
             this.btnSiparisIptal.UseVisualStyleBackColor = false;
+            this.btnSiparisIptal.Click += new System.EventHandler(this.btnSiparisIptal_Click);
             // 
             // btnAnasayfa
             // 
@@ -140,6 +153,7 @@ namespace BilgeKafe.UI
             this.btnAnasayfa.TabIndex = 6;
             this.btnAnasayfa.Text = "ANASAYFAYA DÖN";
             this.btnAnasayfa.UseVisualStyleBackColor = false;
+            this.btnAnasayfa.Click += new System.EventHandler(this.btnAnasayfa_Click);
             // 
             // btnOdemeAl
             // 
@@ -153,6 +167,7 @@ namespace BilgeKafe.UI
             this.btnOdemeAl.TabIndex = 7;
             this.btnOdemeAl.Text = "ÖDEME AL";
             this.btnOdemeAl.UseVisualStyleBackColor = false;
+            this.btnOdemeAl.Click += new System.EventHandler(this.btnOdemeAl_Click);
             // 
             // btnMasaTasi
             // 
@@ -217,9 +232,9 @@ namespace BilgeKafe.UI
             this.lblOdemeTutari.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOdemeTutari.Location = new System.Drawing.Point(902, 334);
             this.lblOdemeTutari.Name = "lblOdemeTutari";
-            this.lblOdemeTutari.Size = new System.Drawing.Size(108, 28);
+            this.lblOdemeTutari.Size = new System.Drawing.Size(80, 28);
             this.lblOdemeTutari.TabIndex = 13;
-            this.lblOdemeTutari.Text = "199,99 ₺";
+            this.lblOdemeTutari.Text = "0,00 ₺";
             // 
             // cboMasaNo
             // 
@@ -231,6 +246,41 @@ namespace BilgeKafe.UI
             this.cboMasaNo.Name = "cboMasaNo";
             this.cboMasaNo.Size = new System.Drawing.Size(129, 35);
             this.cboMasaNo.TabIndex = 15;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "UrunAd";
+            this.Column1.HeaderText = "Ürün";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "BirimFiyat";
+            dataGridViewCellStyle4.Format = "0.00₺";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column2.HeaderText = "Birim Fiyatı";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "adet";
+            this.Column3.HeaderText = "Adet";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TutarTL";
+            this.Column4.HeaderText = "Tutar";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // SiparisForm
             // 
@@ -280,5 +330,9 @@ namespace BilgeKafe.UI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblOdemeTutari;
         private System.Windows.Forms.ComboBox cboMasaNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
