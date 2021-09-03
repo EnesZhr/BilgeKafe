@@ -44,20 +44,21 @@ namespace BilgeKafe.UI
             this.tsmiGecmisSiparisler});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(833, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(833, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tsmiUrunler
             // 
             this.tsmiUrunler.Name = "tsmiUrunler";
-            this.tsmiUrunler.Size = new System.Drawing.Size(71, 24);
+            this.tsmiUrunler.Size = new System.Drawing.Size(58, 20);
             this.tsmiUrunler.Text = "Ürünler";
+            this.tsmiUrunler.Click += new System.EventHandler(this.tsmiUrunler_Click);
             // 
             // tsmiGecmisSiparisler
             // 
             this.tsmiGecmisSiparisler.Name = "tsmiGecmisSiparisler";
-            this.tsmiGecmisSiparisler.Size = new System.Drawing.Size(136, 24);
+            this.tsmiGecmisSiparisler.Size = new System.Drawing.Size(108, 20);
             this.tsmiGecmisSiparisler.Text = "Geçmiş Siparişler";
             this.tsmiGecmisSiparisler.Click += new System.EventHandler(this.tsmiGecmisSiparisler_Click_1);
             // 
@@ -76,7 +77,7 @@ namespace BilgeKafe.UI
             // 
             // AnaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 623);
             this.Controls.Add(this.lvwMasalar);
