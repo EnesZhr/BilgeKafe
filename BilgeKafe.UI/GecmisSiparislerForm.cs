@@ -21,6 +21,8 @@ namespace BilgeKafe.UI
             this.db = db;
             
             InitializeComponent();
+            dgvSiparisler.AutoGenerateColumns = false;
+            dgvSiparisDetaylari.AutoGenerateColumns = false;
             dgvSiparisler.DataSource = db.GecmisSiparisler;
             
         }
