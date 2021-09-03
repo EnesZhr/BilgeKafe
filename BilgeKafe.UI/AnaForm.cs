@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BilgeKafe.Data;
 using BilgeKafe.UI.Properties;
+using Newtonsoft.Json;
 
 namespace BilgeKafe.UI
 {
@@ -18,15 +20,21 @@ namespace BilgeKafe.UI
         private readonly BindingList<GecmisSiparislerForm> gecmisSiparislerForm;
         public AnaForm()
         {
-            OrnekUrunleriOlustur();
+            VerileriOku();
             InitializeComponent();
             MasalariOlustu();
         }
 
-        private void OrnekUrunleriOlustur()
+        private void VerileriOku()
         {
-            db.Urunler.Add(new Urun() { UrunAd = "Kola", BirimFiyat = 5.99m });
-            db.Urunler.Add(new Urun() { UrunAd = "Çay", BirimFiyat = 4.50m });
+            try
+            {
+                string json = File.ReadAllText("veri.json");
+                db = JsonConvert.DeserializeObject<KafeVeri>(json);
+            }
+            catch (Exception)
+            {        
+            }
         }
 
         private void MasalariOlustu()
@@ -43,7 +51,7 @@ namespace BilgeKafe.UI
             {
                 ListViewItem lvi = new ListViewItem($"Masa{i}");
                 lvi.Tag = i;
-                lvi.ImageKey = "bos";
+                lvi.ImageKey = db.AktifSiparisler.Any(x=> x.MasaNo == i ) ? "dolu":"bos";
                 lvwMasalar.Items.Add(lvi);
             }
         }
@@ -84,6 +92,12 @@ namespace BilgeKafe.UI
         private void tsmiUrunler_Click(object sender, EventArgs e)
         {
             new UrunlerForm(db).ShowDialog();
+        }
+
+        private void AnaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string json = JsonConvert.SerializeObject(db);
+            File.WriteAllText("veri.json", json);
         }
     }
 }
