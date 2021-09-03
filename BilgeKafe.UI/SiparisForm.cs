@@ -16,24 +16,44 @@ namespace BilgeKafe.UI
         private readonly KafeVeri db;
         private readonly Siparis siparis;
         private readonly BindingList<SiparisDetay> blSiparisDetaylar;
-        
+        public event EventHandler<MasaTasindiEventArgs> MasaTasindi;
+
 
         public SiparisForm(KafeVeri db, Siparis siparis)
         {
             this.db = db;
             this.siparis = siparis;
-            blSiparisDetaylar = new BindingList<SiparisDetay>(siparis.SiparisDetaylar);            
+            blSiparisDetaylar = new BindingList<SiparisDetay>(siparis.SiparisDetaylar);
             blSiparisDetaylar.ListChanged += BlSiparisDetaylar_ListChanged;
             InitializeComponent();
             dgvSiparişDetaylari.AutoGenerateColumns = false; // otomatik sütun oluşturmasını kapattık
             UrunleriListele();
             MasaNoyuGuncelle();
             dgvSiparişDetaylari.DataSource = blSiparisDetaylar;
+            MasaNolariListele();
             blSiparisDetaylar.ResetBindings();
-            
-            
+
+
+
 
         }
+
+        private void MasaNolariListele()
+        {
+            cboMasaNo.DataSource = Enumerable.Range(1, 20).Where(x => !db.AktifSiparisler.Any(i => i.MasaNo ==x)).ToList();
+
+            //cboMasaNo.Items.Clear();
+            //for (int i = 0; i < db.MasaAdet; i++)
+            //{
+            //    if (!db.AktifSiparisler.Any(x => x.MasaNo == i))
+            //    {
+            //        cboMasaNo.Items.Add(i);
+            //    }
+            //}
+
+
+        }
+
         //Binding list üzerinde değişiklik yapıldığında tetiklenen evente bağlı
         private void BlSiparisDetaylar_ListChanged(object sender, ListChangedEventArgs e)
         {
@@ -74,7 +94,7 @@ namespace BilgeKafe.UI
                 Adet = adet
             };
             blSiparisDetaylar.Add(sd);
-            
+
         }
 
         private void btnAnasayfa_Click(object sender, EventArgs e)
@@ -114,6 +134,22 @@ namespace BilgeKafe.UI
             Close();
         }
 
-       
+        private void btnMasaTasi_Click(object sender, EventArgs e)
+        {
+            int yeniMasaNo =(int)cboMasaNo.SelectedItem;
+            int eskiMasaNo = siparis.MasaNo;
+            siparis.MasaNo = yeniMasaNo;
+            MasaNoyuGuncelle();
+            MasaNolariListele();
+
+            MasaTasindiEventArgs args = new MasaTasindiEventArgs()
+            {
+                EskiMasaNo = eskiMasaNo,
+                YeniMasaNo = yeniMasaNo
+            };
+
+            if (MasaTasindi != null)
+                MasaTasindi(this, args);
+        }
     }
 }

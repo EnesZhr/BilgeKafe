@@ -29,22 +29,22 @@ namespace BilgeKafe.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvSiparisler = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvSiparisDetaylari = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvSiparisDetaylari = new System.Windows.Forms.DataGridView();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -101,6 +101,56 @@ namespace BilgeKafe.UI
             this.dgvSiparisler.TabIndex = 1;
             this.dgvSiparisler.SelectionChanged += new System.EventHandler(this.dgvSiparisler_SelectionChanged);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MasaNo";
+            this.Column1.HeaderText = "Masa No";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 94;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "AcilisZamani";
+            this.Column2.HeaderText = "Açılış";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 67;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "KapanisZamani";
+            this.Column3.HeaderText = "Kapanış";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 86;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "SiparisDurum";
+            this.Column4.HeaderText = "Durum";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 78;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "OdenenTutar";
+            dataGridViewCellStyle1.Format = "0.00₺";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column5.HeaderText = "Odenen Tutar";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 123;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "ToplamTutarTL";
+            this.Column6.HeaderText = "Toplam Tutar";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 121;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -138,66 +188,6 @@ namespace BilgeKafe.UI
             this.dgvSiparisDetaylari.TabIndex = 1;
             this.dgvSiparisDetaylari.SelectionChanged += new System.EventHandler(this.dgvSiparisler_SelectionChanged);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(23, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Sipariş Detayları";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MasaNo";
-            this.Column1.HeaderText = "Masa No";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 94;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "AcilisZamani";
-            this.Column2.HeaderText = "Açılış";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 67;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "KapanisZamani";
-            this.Column3.HeaderText = "Kapanış";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 86;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "SiparisDurum";
-            this.Column4.HeaderText = "Durum";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 78;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "OdenenTutar";
-            dataGridViewCellStyle2.Format = "0.00₺";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column5.HeaderText = "Odenen Tutar";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 123;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "ToplamTutarTL";
-            this.Column6.HeaderText = "Toplam Tutar";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 121;
-            // 
             // Column7
             // 
             this.Column7.DataPropertyName = "UrunAd";
@@ -230,6 +220,16 @@ namespace BilgeKafe.UI
             this.Column10.ReadOnly = true;
             this.Column10.Width = 67;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(23, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 23);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Sipariş Detayları";
+            // 
             // GecmisSiparislerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -239,6 +239,7 @@ namespace BilgeKafe.UI
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GecmisSiparislerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GecmisSiparisler";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
