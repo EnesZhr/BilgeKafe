@@ -105,33 +105,37 @@ namespace BilgeKafe.UI
             // 
             this.Column1.DataPropertyName = "MasaNo";
             this.Column1.HeaderText = "Masa No";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 94;
+            this.Column1.Width = 114;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "AcilisZamani";
             this.Column2.HeaderText = "Açılış";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 67;
+            this.Column2.Width = 83;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "KapanisZamani";
             this.Column3.HeaderText = "Kapanış";
+            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 86;
+            this.Column3.Width = 106;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "SiparisDurum";
             this.Column4.HeaderText = "Durum";
+            this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 78;
+            this.Column4.Width = 96;
             // 
             // Column5
             // 
@@ -139,17 +143,19 @@ namespace BilgeKafe.UI
             dataGridViewCellStyle1.Format = "0.00₺";
             this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column5.HeaderText = "Odenen Tutar";
+            this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 123;
+            this.Column5.Width = 157;
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "ToplamTutarTL";
             this.Column6.HeaderText = "Toplam Tutar";
+            this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 121;
+            this.Column6.Width = 151;
             // 
             // label1
             // 
@@ -157,7 +163,7 @@ namespace BilgeKafe.UI
             this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(18, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 23);
+            this.label1.Size = new System.Drawing.Size(93, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Siparişler";
             // 
@@ -186,39 +192,42 @@ namespace BilgeKafe.UI
             this.dgvSiparisDetaylari.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSiparisDetaylari.Size = new System.Drawing.Size(968, 234);
             this.dgvSiparisDetaylari.TabIndex = 1;
-            this.dgvSiparisDetaylari.SelectionChanged += new System.EventHandler(this.dgvSiparisler_SelectionChanged);
             // 
             // Column7
             // 
             this.Column7.DataPropertyName = "UrunAd";
             this.Column7.HeaderText = "Ürün Adı";
+            this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 89;
+            this.Column7.Width = 113;
             // 
             // Column8
             // 
             this.Column8.DataPropertyName = "BirimFiyat";
             this.Column8.HeaderText = "Birim Fiyatı";
+            this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
-            this.Column8.Width = 105;
+            this.Column8.Width = 129;
             // 
             // Column9
             // 
             this.Column9.DataPropertyName = "Adet";
             this.Column9.HeaderText = "Adet";
+            this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
-            this.Column9.Width = 62;
+            this.Column9.Width = 78;
             // 
             // Column10
             // 
             this.Column10.DataPropertyName = "TutarTL";
             this.Column10.HeaderText = "Tutar";
+            this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
-            this.Column10.Width = 67;
+            this.Column10.Width = 82;
             // 
             // label2
             // 
@@ -226,13 +235,13 @@ namespace BilgeKafe.UI
             this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(23, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 23);
+            this.label2.Size = new System.Drawing.Size(148, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "Sipariş Detayları";
             // 
             // GecmisSiparislerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 609);
             this.Controls.Add(this.splitContainer1);

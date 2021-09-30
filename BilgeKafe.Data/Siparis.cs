@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BilgeKafe.Data
 {
+    [Table("Siparisler")]
     public class Siparis
     {
+        public int Id { get; set; }
+
         public int MasaNo { get; set; }
 
         public SiparisDurum SiparisDurum { get; set; } = SiparisDurum.Aktif;
@@ -18,33 +22,15 @@ namespace BilgeKafe.Data
 
         public DateTime? KapanisZamani { get; set; }
 
-        public List<SiparisDetay> SiparisDetaylar { get; set; } = new List<SiparisDetay>();
+        public virtual ICollection<SiparisDetay> SiparisDetaylar { get; set; } = new HashSet<SiparisDetay>();
 
+        [NotMapped]
         public string ToplamTutarTL => $"{ToplamTutar():n2}₺";
 
 
         public decimal ToplamTutar() => SiparisDetaylar.Sum(sd => sd.Tutar());
 
-        //public decimal ToplamTutar()
-        //{
-        //    decimal toplam = 0;
-        //    foreach (SiparisDetay detay in SiparisDetaylar)
-        //    {
-        //        toplam += detay.Tutar();
-        //    }
-        //    return toplam;
-        //}
-
-
-
-        //* MasaNo: int
-        //* Durum: SiparisDurum
-        //* OdenenTutar: decimal
-        //* AcilisZamani: DateTime?
-        //* KapanisZamani: DateTime?
-        //* SiparisDetaylar: List<SiparisDetay>
-        //* ToplamTutarTL: string-readonly
-        //- ToplamTutar() : decimal
+       
 
     }
 }

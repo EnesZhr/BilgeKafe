@@ -59,7 +59,7 @@ namespace BilgeKafe.UI
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 24);
+            this.label1.Size = new System.Drawing.Size(64, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ürün";
             // 
@@ -87,6 +87,7 @@ namespace BilgeKafe.UI
             this.dgvSiparişDetaylari.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSiparişDetaylari.Size = new System.Drawing.Size(580, 517);
             this.dgvSiparişDetaylari.TabIndex = 1;
+            this.dgvSiparişDetaylari.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvSiparişDetaylari_UserDeletingRow);
             // 
             // Column1
             // 
@@ -130,7 +131,7 @@ namespace BilgeKafe.UI
             this.cboUrun.FormattingEnabled = true;
             this.cboUrun.Location = new System.Drawing.Point(16, 40);
             this.cboUrun.Name = "cboUrun";
-            this.cboUrun.Size = new System.Drawing.Size(217, 30);
+            this.cboUrun.Size = new System.Drawing.Size(217, 37);
             this.cboUrun.TabIndex = 2;
             // 
             // nudAdet
@@ -143,7 +144,7 @@ namespace BilgeKafe.UI
             0,
             0});
             this.nudAdet.Name = "nudAdet";
-            this.nudAdet.Size = new System.Drawing.Size(150, 28);
+            this.nudAdet.Size = new System.Drawing.Size(150, 34);
             this.nudAdet.TabIndex = 3;
             this.nudAdet.Value = new decimal(new int[] {
             1,
@@ -222,7 +223,7 @@ namespace BilgeKafe.UI
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(244, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 24);
+            this.label2.Size = new System.Drawing.Size(62, 29);
             this.label2.TabIndex = 9;
             this.label2.Text = "Adet";
             // 
@@ -232,7 +233,7 @@ namespace BilgeKafe.UI
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(789, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 24);
+            this.label3.Size = new System.Drawing.Size(115, 29);
             this.label3.TabIndex = 10;
             this.label3.Text = "Masa No:";
             // 
@@ -257,7 +258,7 @@ namespace BilgeKafe.UI
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(701, 334);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 24);
+            this.label5.Size = new System.Drawing.Size(168, 29);
             this.label5.TabIndex = 12;
             this.label5.Text = "Ödeme Tutarı:";
             // 
@@ -268,7 +269,7 @@ namespace BilgeKafe.UI
             this.lblOdemeTutari.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOdemeTutari.Location = new System.Drawing.Point(902, 334);
             this.lblOdemeTutari.Name = "lblOdemeTutari";
-            this.lblOdemeTutari.Size = new System.Drawing.Size(61, 24);
+            this.lblOdemeTutari.Size = new System.Drawing.Size(77, 29);
             this.lblOdemeTutari.TabIndex = 13;
             this.lblOdemeTutari.Text = "0,00 ₺";
             // 
@@ -280,12 +281,12 @@ namespace BilgeKafe.UI
             this.cboMasaNo.FormattingEnabled = true;
             this.cboMasaNo.Location = new System.Drawing.Point(797, 41);
             this.cboMasaNo.Name = "cboMasaNo";
-            this.cboMasaNo.Size = new System.Drawing.Size(129, 30);
+            this.cboMasaNo.Size = new System.Drawing.Size(129, 37);
             this.cboMasaNo.TabIndex = 15;
             // 
             // SiparisForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1103, 611);
             this.Controls.Add(this.cboMasaNo);

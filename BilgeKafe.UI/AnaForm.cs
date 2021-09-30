@@ -20,21 +20,8 @@ namespace BilgeKafe.UI
         private readonly BindingList<GecmisSiparislerForm> gecmisSiparislerForm;
         public AnaForm()
         {
-            VerileriOku();
             InitializeComponent();
             MasalariOlustu();
-        }
-
-        private void VerileriOku()
-        {
-            try
-            {
-                string json = File.ReadAllText("veri.json");
-                db = JsonConvert.DeserializeObject<KafeVeri>(json);
-            }
-            catch (Exception)
-            {        
-            }
         }
 
         private void MasalariOlustu()
@@ -51,7 +38,7 @@ namespace BilgeKafe.UI
             {
                 ListViewItem lvi = new ListViewItem($"Masa{i}");
                 lvi.Tag = i;
-                lvi.ImageKey = db.AktifSiparisler.Any(x=> x.MasaNo == i ) ? "dolu":"bos";
+                lvi.ImageKey = db.Siparisler.Any(x=> x.MasaNo == i && x.SiparisDurum== SiparisDurum.Aktif) ? "dolu":"bos";
                 lvwMasalar.Items.Add(lvi);
             }
         }
@@ -63,13 +50,13 @@ namespace BilgeKafe.UI
             int masaNo = (int)lvi.Tag;
 
             //Tıklanan masaya ait varsa siparişi bul
-            Siparis siparis = db.AktifSiparisler.FirstOrDefault(x => x.MasaNo == masaNo);
+            Siparis siparis = db.Siparisler.FirstOrDefault(x => x.MasaNo == masaNo && x.SiparisDurum == SiparisDurum.Aktif);
 
             //Eger siparis o masaya ait oluşturulmamışsa
             if (siparis == null)
             {
                 siparis = new Siparis() { MasaNo = masaNo };
-                db.AktifSiparisler.Add(siparis);
+                db.Siparisler.Add(siparis);
             }
 
 
@@ -106,10 +93,5 @@ namespace BilgeKafe.UI
             new UrunlerForm(db).ShowDialog();
         }
 
-        private void AnaForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            string json = JsonConvert.SerializeObject(db);
-            File.WriteAllText("veri.json", json);
-        }
     }
 }
